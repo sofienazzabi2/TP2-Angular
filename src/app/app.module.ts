@@ -23,6 +23,7 @@ import { TestformComponent } from "./components/testform/testform.component";
 import { ToastrModule } from "ngx-toastr";
 import {EmbaucheComponent} from "./cv/embauche/embauche.component";
 import { LoginComponent } from './login/login.component';
+import { SpecificCvComponent } from './cv/specific-cv/specific-cv.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { LoginComponent } from './login/login.component';
     TestformComponent,
     EmbaucheComponent,
     LoginComponent,
+    SpecificCvComponent,
   ],
   imports: [
     BrowserModule,

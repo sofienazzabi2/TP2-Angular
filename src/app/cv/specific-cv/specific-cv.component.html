@@ -1,0 +1,73 @@
+<div class="container mx-auto justify-content-center text-center " *ngIf="cv">
+<div class="user mt-3">
+  <div class="user">
+    <img
+      class="img-circle rounded-5"
+      src="assets/images/{{ cv.path | defaultImage }}"
+    />
+  </div>
+</div>
+</div>
+<div class="container mx-auto justify-content-center " *ngIf="cv">
+  <div class="mt-4">
+    <h2>Informations</h2>
+    <div class="form-group">
+      <label class="fw-bold" for="nameInput">Name</label>
+      <input
+        type="text"
+        id="nameInput"
+        class="form-control"
+        [(ngModel)]="cv.name"
+        disabled
+      />
+    </div>
+    <div class="form-group">
+      <label class="fw-bold" for="firstnameInput">Firstname</label>
+
+      <input
+        type="text"
+        id="firstnameInput"
+        class="form-control"
+        [(ngModel)]="cv.firstname"
+        disabled
+      />
+    </div>
+    <div class="form-group">
+      <label class="fw-bold" for="jobInput">Job</label>
+      <input
+        type="text"
+        id="jobInput"
+        class="form-control"
+        [(ngModel)]="cv.job"
+        disabled
+      />
+    </div>
+    <div class="form-group">
+      <label class="fw-bold" for="ageInput">Age</label>
+      <input
+        type="text"
+        id="ageInput"
+        class="form-control"
+        [(ngModel)]="cv.age"
+        disabled
+      />
+    </div>
+    <div class="form-group">
+      <label class="fw-bold" for="cinInput">CIN</label>
+      <input
+        type="text"
+        id="cinInput"
+        class="form-control"
+        [(ngModel)]="cv.cin"
+        disabled
+      />
+    </div>
+    <button class="btn btn-danger mt-3"
+    (click)="deleteCv(cv.id)"
+    >Supprimer</button>
+  </div>
+</div>
+
+<div class="bg-warning" *ngIf="!cv">
+  <h2 class="text-center">Ce CV n'existe pas</h2>
+</div>

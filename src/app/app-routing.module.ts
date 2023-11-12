@@ -9,6 +9,7 @@ import {LoginComponent} from "./login/login.component";
 import {Ex1Component} from "./ex1/ex1.component";
 import {Ex2Component} from "./ex2/ex2.component";
 import {loginGuard} from "./login/login.guard";
+import {SpecificCvComponent} from "./cv/specific-cv/specific-cv.component";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
     component: FrontComponent,
     children: [
       { path: 'cv', component: CvComponent },
+      {path:'cv/:id',component:SpecificCvComponent},
       { path: 'route/:quelquechose', component: RouterParamComponent },
       { path: 'login',component:LoginComponent ,canActivate : [loginGuard]},
       { path: 'ex1',component:Ex1Component },
