@@ -8,13 +8,13 @@ export const loginGuard: CanActivateFn = (route, state) => {
     const authService : AuthentificationService = inject(AuthentificationService)
     const router : Router = inject(Router);
 
-    return authService.loggedIn$.pipe(
-        tap(isLogged => {
-            if (isLogged) {
+    return authService.user$.pipe(
+        tap(user => {
+            if (user) {
                 router.navigate(['cv']);
             }
         }),
-        map(isLogged => !isLogged),
+        map(user => !user),
         catchError((error) => {
             console.error('Error in loginGuard', error);
             return of(false);

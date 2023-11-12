@@ -13,10 +13,7 @@ export class AuthentificationService{
   // We used behavior subject to store to emit the last value of the observable even to the new subscribers
   private user = new BehaviorSubject<AuthUser | null>(null);
   user$ = this.user.asObservable();
-  private loggedOut = new BehaviorSubject<boolean>(true);
-  loggedOut$ = this.loggedOut.asObservable();
-  private loggedIn = new BehaviorSubject<boolean>(false);
-  loggedIn$ = this.loggedIn.asObservable();
+
 
   constructor() {
     this.refreshAuthState()
@@ -62,13 +59,9 @@ export class AuthentificationService{
     const userFound = localStorage.getItem('AuthUser');
     if(!userFound){
       this.user.next(null);
-      this.loggedIn.next(false);
-      this.loggedOut.next(true);
     }else{
       const user : AuthUser = JSON.parse(userFound);
       this.user.next(new  AuthUser(user.id, user.email));
-      this.loggedIn.next(true);
-      this.loggedOut.next(false);
     }
   }
 }
