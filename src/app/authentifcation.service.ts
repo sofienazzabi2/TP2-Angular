@@ -10,6 +10,7 @@ import {LoginData} from "./login/model/LoginData";
 })
 export class AuthentificationService{
   private http = inject(HttpClient);
+  // We used behavior subject to store to emit the last value of the observable even to the new subscribers
   private user = new BehaviorSubject<AuthUser | null>(null);
   user$ = this.user.asObservable();
   private loggedOut = new BehaviorSubject<boolean>(true);
