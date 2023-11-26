@@ -1,14 +1,14 @@
-<div class="container mx-auto justify-content-center text-center " *ngIf="cv">
-<div class="user mt-3">
-  <div class="user">
-    <img
-      class="img-circle rounded-5"
-      src="assets/images/{{ cv.path | defaultImage }}"
-    />
+<div class="container mx-auto justify-content-center text-center" *ngIf="cv">
+  <div class="user mt-3">
+    <div class="user">
+      <img
+        class="img-circle rounded-5"
+        src="assets/images/{{ cv.path | defaultImage }}"
+      />
+    </div>
   </div>
 </div>
-</div>
-<div class="container mx-auto justify-content-center " *ngIf="cv">
+<div class="container mx-auto justify-content-center" *ngIf="cv">
   <div class="mt-4">
     <h2>Informations</h2>
     <div class="form-group">
@@ -62,9 +62,9 @@
         disabled
       />
     </div>
-    <button class="btn btn-danger mt-3"
-    (click)="deleteCv(cv.id)"
-    >Supprimer</button>
+    <button class="btn btn-danger mt-3" (click)="deleteCv(cv.id)">
+      Supprimer
+    </button>
   </div>
 </div>
 

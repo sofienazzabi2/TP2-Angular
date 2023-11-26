@@ -1,0 +1,23 @@
+<div class="product-item">
+  <div class="alert alert-warning">
+    <p>Number of Products Displayed: {{ productCounter }}</p>
+  </div>
+  <button (click)="loadProducts()" class="btn btn-primary mt-3">
+    More products
+  </button>
+  <div class="row">
+    <div *ngFor="let product of products" class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img
+          src="{{ product.images[0] }}"
+          alt="{{ product.title }}"
+          class="card-img-top rounded-circle product-image w-50 h-50"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

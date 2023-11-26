@@ -1,1 +1,8 @@
 <p>master-details works!</p>
+
+<div class="row">
+  <app-list [cvs]="cvs$ | async"></app-list>
+</div>
+<div class="row">
+  <router-outlet></router-outlet>
+</div>

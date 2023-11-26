@@ -22,18 +22,18 @@
       <div class="navbar-nav">
         <!-- ['cv','add'] -->
         <a
-                class="nav-link"
-                aria-current="page"
-                [routerLink]="['ex1']"
-                routerLinkActive="active text-primary"
-        >Ex1</a
+          class="nav-link"
+          aria-current="page"
+          [routerLink]="['ex1']"
+          routerLinkActive="active text-primary"
+          >Ex1</a
         >
         <a
-                class="nav-link"
-                aria-current="page"
-                [routerLink]="['ex2']"
-                routerLinkActive="active text-primary"
-        >Ex2</a
+          class="nav-link"
+          aria-current="page"
+          [routerLink]="['ex2']"
+          routerLinkActive="active text-primary"
+          >Ex2</a
         >
 
         <a
@@ -43,18 +43,40 @@
           routerLinkActive="active text-primary"
           >Cv</a
         >
+
+        <a
+          class="nav-link"
+          aria-current="page"
+          [routerLink]="['cv-resolver', 'list']"
+          routerLinkActive="active text-primary"
+          >Master Details</a
+        >
+
+        <a
+          class="nav-link"
+          aria-current="page"
+          [routerLink]="['pure-pipe']"
+          routerLinkActive="active text-primary"
+          >Pure Pipe</a
+        >
+        <a
+          class="nav-link"
+          aria-current="page"
+          [routerLink]="['product-list']"
+          routerLinkActive="active text-primary"
+          >Products</a
+        >
         <a
           class="nav-link"
           aria-current="page"
           [routerLink]="['login']"
           *ngIf="!loggedIn"
           routerLinkActive="active text-primary"
-        >Login</a
+          >Login</a
         >
         <button class="nav-item nav-link" (click)="logout()" *ngIf="loggedIn">
           Logout
         </button>
-
       </div>
     </div>
   </div>

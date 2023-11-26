@@ -1,0 +1,21 @@
+<form [formGroup]="searchForm" class="mt-3">
+  <div class="form-group">
+    <label for="search" class="font-weight-bold">Rechercher :</label>
+    <input
+      type="text"
+      id="search"
+      formControlName="search"
+      class="form-control"
+      placeholder="Saisissez un nom"
+    />
+  </div>
+</form>
+<ul *ngIf="searchResults.length > 0" class="list-group mt-3">
+  <li
+    *ngFor="let cv of searchResults"
+    (click)="onSelect(cv)"
+    class="list-group-item list-group-item-action hover-effect"
+  >
+    {{ cv.name }} {{ cv.firstname }}
+  </li>
+</ul>
